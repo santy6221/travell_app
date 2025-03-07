@@ -32,8 +32,10 @@ class TravelController extends Controller
         $exchange = $this->exchangeService->getExchangeRate($city->currency_code, $request->budget);
 
         return response()->json([
+            'city_name' => $city->name,
             'weather' => $weather['main']['temp'],
-            'currency_name' => $city->currency_code,
+            'currency_name' => $city->currency_name,
+            'currency_code' => $city->currency_code,
             'currency_symbol' => $city->currency_symbol,
             'converted' => $exchange['converted'],
             'exchange' => $exchange['rate']
