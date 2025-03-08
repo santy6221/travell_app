@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB; // <-- Faltaba importar el Facade DB
+use Illuminate\Support\Facades\DB;
 
 class CitySeeder extends Seeder
 {
@@ -12,24 +12,24 @@ class CitySeeder extends Seeder
      */
     public function run(): void
     {
-        // Insertar ciudades (sintaxis correcta para múltiples registros)
+        
         DB::table('cities')->insert([
             [
-                'name' => 'New York',
-                'country_code' => 'US', // Usar código ISO de 2 letras
-                'currency_name' => 'Dollar',
+                'name' => 'Nueva York',
+                'country_code' => 'US',
+                'currency_name' => 'Dolar',
                 'currency_code' => 'USD',
                 'currency_symbol' => '$',
             ],
             [
-                'name' => 'London',
+                'name' => 'Londres',
                 'country_code' => 'GB',
-                'currency_name' => 'Pound Sterling',
+                'currency_name' => 'Libra esterlina',
                 'currency_code' => 'GBP',
                 'currency_symbol' => '£',
             ],
             [
-                'name' => 'Paris',
+                'name' => 'París',
                 'country_code' => 'FR',
                 'currency_name' => 'Euro',
                 'currency_code' => 'EUR',
@@ -38,7 +38,7 @@ class CitySeeder extends Seeder
             [
                 'name' => 'Tokyo',
                 'country_code' => 'JP',
-                'currency_name' => 'Yen',
+                'currency_name' => 'Yen japonés',
                 'currency_code' => 'JPY',
                 'currency_symbol' => '¥',
             ],
@@ -51,7 +51,5 @@ class CitySeeder extends Seeder
             ],
         ]);
 
-        // Si necesitas datos de prueba adicionales (opcional)
-        // \App\Models\City::factory(10)->create();
     }
 }
