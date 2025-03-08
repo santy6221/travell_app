@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('currency_name');
             $table->string('currency_code', 3);
             $table->string('currency_symbol');
-            $table->timestamps();
         });
     }
 
